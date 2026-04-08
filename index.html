@@ -4,46 +4,229 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Granite State Precision Pole Inspection, LLC</title>
-  <meta name="description" content="Professional wooden utility pole inspections nationwide. Precision density testing, visual inspections, and hazard marker installation from experienced owner-operators." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Granite State Precision Pole Inspection, LLC provides professional wooden utility pole inspections, precision density testing, visual inspections, safety marker installation, and nationwide service." />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; }
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 18px;
+    }
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .hero {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background:
+        linear-gradient(rgba(17, 24, 39, 0.65), rgba(17, 24, 39, 0.65)),
+        url('https://images.unsplash.com/photo-1581091870622-3a1a1a9b0c8b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      max-width: 720px;
+      padding: 90px 0;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 10px 16px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 56px;
+      line-height: 1.08;
+      margin: 0 0 20px;
+    }
+    h2 {
+      font-size: 38px;
+      line-height: 1.15;
+      margin: 0 0 18px;
+      color: #111827;
+    }
+    h3 {
+      font-size: 22px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+    .hero p {
+      font-size: 19px;
+      margin: 0 0 16px;
+      color: #e5e7eb;
+    }
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+    .btn-primary {
+      background: #f97316;
+      color: #fff;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .stats {
+      background: #f8fafc;
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 28px 0;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #f97316;
+      margin-bottom: 6px;
+    }
+    .section {
+      padding: 84px 0;
+    }
+    .section-light {
+      background: #f8fafc;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 34px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .image-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .why-us {
+      background: #111827;
+      color: #fff;
+    }
+    .why-us h2, .why-us h3 { color: #fff; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .why-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+    }
+    .why-list li {
+      margin-bottom: 14px;
+      padding-left: 28px;
+      position: relative;
+      color: #e5e7eb;
+    }
+    .why-list li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: #f97316;
+      font-weight: 700;
+    }
+    .contact {
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      color: #fff;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 22px;
+      padding: 28px;
+      backdrop-filter: blur(4px);
+    }
+    .contact-card p, .contact p {
+      color: #fff;
+    }
+    p { margin: 0 0 14px; }
+
+    @media (max-width: 980px) {
+      h1 { font-size: 42px; }
+      h2 { font-size: 30px; }
+      .stats-grid,
+      .cards,
+      .two-col,
+      .why-grid,
+      .image-grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 720px) {
+      .stats-grid,
+      .cards,
+      .two-col,
+      .why-grid,
+      .image-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        min-height: auto;
+      }
+      h1 { font-size: 34px; }
+      .hero-content { padding: 70px 0; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="brand-mark">GS</div>
-        <div>
-          <div class="brand-name">Granite State Precision Pole Inspection, LLC</div>
-          <div class="brand-sub">Nationwide utility pole inspection services</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#contact" class="btn btn-small">Contact</a>
-      </nav>
-    </div>
-  </header>
-
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow">Professional wooden utility pole inspections across the United States</div>
-        <h1>Experienced. Accurate. Trustworthy. Owner-led service.</h1>
-        <p class="lead">Granite State Precision Pole Inspection, LLC provides precision pole testing, detailed visual inspections, and safety support with the responsiveness and accountability that larger firms often cannot match.</p>
-        <p>Owners <strong>Kevin Schneider</strong> and <strong>Kevin Keenan</strong> have each inspected more than <strong>10,000 poles</strong>. We bring real field experience, better customer care, and competitive pricing to utility and infrastructure clients nationwide.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn">Request a Quote</a>
-          <a href="#why-us" class="btn btn-outline">Why Choose Us</a>
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Professional Wooden Utility Pole Inspection Services Nationwide</div>
+        <h1>Granite State Precision Pole Inspection, LLC</h1>
+        <p>Experienced, accurate, and dependable pole inspection services with the responsiveness and customer care larger firms often cannot match.</p>
+        <p>Owners Kevin Schneider and Kevin Keenan provide precision density testing, visual inspections, safety marker installation, and nationwide field support.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#contact">Request a Quote</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
         </div>
-      </div>
-      <div class="hero-card">
-        <img src="images/team-collage.jpg" alt="Granite State Precision Pole Inspection promotional image" />
       </div>
     </div>
   </section>
@@ -52,125 +235,108 @@
     <div class="container stats-grid">
       <div class="stat-card">
         <div class="stat-number">20,000+</div>
-        <div class="stat-label">Combined poles inspected</div>
+        <div>Combined poles inspected</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">50 States</div>
-        <div class="stat-label">Available nationwide</div>
+        <div>Available nationwide</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">Owner-Led</div>
-        <div class="stat-label">Direct communication and accountability</div>
+        <div>Direct communication and accountability</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">Better Value</div>
-        <div class="stat-label">Competitive pricing with stronger service</div>
+        <div>Competitive pricing with strong service</div>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section class="section" id="about">
     <div class="container two-col">
       <div>
-        <div class="section-tag">About the Owners</div>
         <h2>Built by experienced field professionals</h2>
-        <p>Granite State Precision Pole Inspection, LLC was founded by Kevin Schneider and Kevin Keenan to provide utilities and contractors with a more personal, more accountable, and more cost-effective alternative to large inspection firms.</p>
-        <p>With more than 20,000 combined pole inspections, clients get dependable fieldwork, consistent quality, practical expertise, and fast communication from people who actually know the work.</p>
+        <p>Granite State Precision Pole Inspection, LLC was founded to provide utilities, contractors, and infrastructure teams with a more personal, more accountable, and more cost-effective alternative to large inspection firms.</p>
+        <p>With more than 20,000 combined inspections, Kevin Schneider and Kevin Keenan bring practical field knowledge, consistent execution, and responsive service to every project.</p>
       </div>
-      <div class="image-frame tall">
-        <img src="images/team-5.jpeg" alt="Company leadership" />
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section section-alt">
-    <div class="container">
-      <div class="section-tag">Services</div>
-      <h2>Inspection services focused on safety, accuracy, and value</h2>
-      <p class="section-intro">We help clients evaluate wooden utility pole condition through modern testing methods, detailed visual assessment, and practical safety support.</p>
-      <div class="cards three-up">
-        <article class="card">
-          <img src="images/team-1.jpeg" alt="Precision density testing" />
-          <div class="card-body">
-            <h3>Precision Density Testing</h3>
-            <p>We use high-precision drill technology to help assess wood density and the integrity of wooden utility poles with consistent, reliable field data.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="images/team-4.jpeg" alt="Visual pole inspections" />
-          <div class="card-body">
-            <h3>Visual Pole Inspections</h3>
-            <p>We identify visible deterioration, damage, decay indicators, hardware concerns, and safety issues before they become larger operational problems.</p>
-          </div>
-        </article>
-        <article class="card">
-          <img src="images/team-2.jpeg" alt="Professional support and service" />
-          <div class="card-body">
-            <h3>Safety Support & Marker Installation</h3>
-            <p>We support safer field conditions through hazard marker placement and detail-oriented service that helps clients reduce risk and improve visibility.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="why-us" class="section dark-section">
-    <div class="container why-grid">
       <div>
-        <div class="section-tag section-tag-light">Why Choose Us</div>
-        <h2>The expertise of a seasoned field team with the responsiveness of a smaller company</h2>
-        <ul class="check-list">
-          <li>Two owner-operators with 10,000+ poles inspected each</li>
-          <li>Direct access to experienced decision-makers, not layers of management</li>
-          <li>More responsive communication and better customer care</li>
-          <li>Competitive pricing compared with larger inspection firms</li>
-          <li>Focused expertise in wooden utility pole integrity assessment</li>
-          <li>Professional reporting, accountability, and consistent field execution</li>
-        </ul>
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Professional team collaborating in office" />
       </div>
-      <div class="stacked-images">
-        <div class="image-frame"><img src="images/team-3.jpeg" alt="Professional office team" /></div>
-        <div class="image-frame"><img src="images/team-2.jpeg" alt="Trusted relationships" /></div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>Inspection services designed for safety, accuracy, and value.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Precision Density Testing</h3>
+          <p>High-precision drill technology helps measure wood density and assess structural integrity with reliable field data.</p>
+        </div>
+        <div class="card">
+          <h3>Visual Pole Inspections</h3>
+          <p>Identify deterioration, damage, and maintenance issues before they become larger operational problems.</p>
+        </div>
+        <div class="card">
+          <h3>Safety Marker Installation</h3>
+          <p>Improve visibility and reduce risk with hazard marker installation and related safety support.</p>
+        </div>
+        <div class="card">
+          <h3>Nationwide Coverage</h3>
+          <p>Available anywhere in the United States for dependable project support and field inspection services.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
-      <div class="section-tag">Our Team</div>
-      <h2>Professional in the field and in the office</h2>
-      <p class="section-intro">A smaller firm gives clients a team they can know, trust, and rely on throughout the life of a project.</p>
-      <div class="gallery four-up">
-        <img src="images/team-1.jpeg" alt="Team image 1" />
-        <img src="images/team-2.jpeg" alt="Team image 2" />
-        <img src="images/team-3.jpeg" alt="Team image 3" />
-        <img src="images/team-4.jpeg" alt="Team image 4" />
+    <div class="container image-grid-2">
+      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Team meeting and collaboration" />
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Office teamwork and planning" />
+    </div>
+  </section>
+
+  <section class="section why-us" id="why-us">
+    <div class="container why-grid">
+      <div>
+        <h2>Why Choose Us</h2>
+        <p>We combine field experience, owner involvement, and customer care to deliver dependable inspection work without the overhead of larger firms.</p>
+        <ul class="why-list">
+          <li>20,000+ combined inspections</li>
+          <li>Owner-led service with direct accountability</li>
+          <li>Responsive communication and better customer care</li>
+          <li>Competitive pricing compared with larger providers</li>
+          <li>Professional, accurate, and trustworthy execution</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Office team collaborating on project documents" />
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section contact-section">
-    <div class="container contact-grid">
+  <section class="section section-light">
+    <div class="container image-grid-2">
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Business team in office meeting" />
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Professional office collaboration" />
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container two-col">
       <div>
-        <div class="section-tag">Contact Us</div>
-        <h2>Request a quote for your next pole inspection project</h2>
+        <h2 style="color:#fff;">Request a Quote</h2>
         <p>Tell us about your project scope, location, and timeline. Granite State Precision Pole Inspection is ready to support work anywhere in the United States.</p>
       </div>
       <div class="contact-card">
-        <div class="contact-row"><span>Company</span><strong>Granite State Precision Pole Inspection, LLC</strong></div>
-        <div class="contact-row"><span>Owners</span><strong>Kevin Schneider &amp; Kevin Keenan</strong></div>
-        <div class="contact-row"><span>Email</span><a href="mailto:kevinschneider13@mac.com">kevinschneider13@mac.com</a></div>
-        <div class="contact-row"><span>Phone</span><a href="tel:16035125560">603-512-5560</a></div>
-        <div class="contact-row"><span>Service Area</span><strong>Nationwide — all 50 states</strong></div>
+        <h3 style="color:#fff;">Contact Information</h3>
+        <p><strong>Owners:</strong> Kevin Schneider &amp; Kevin Keenan</p>
+        <p><strong>Email:</strong> kevinschneider13@mac.com</p>
+        <p><strong>Phone:</strong> 603-512-5560</p>
+        <p><strong>Service Area:</strong> Nationwide — all 50 states</p>
       </div>
     </div>
   </section>
-
-  <footer class="site-footer">
-    <div class="container footer-flex">
-      <div>© 2026 Granite State Precision Pole Inspection, LLC</div>
-      <div>Professional wooden utility pole inspection services nationwide</div>
-    </div>
-  </footer>
 </body>
 </html>
