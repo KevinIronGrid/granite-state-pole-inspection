@@ -510,18 +510,21 @@
       </div>
       <div class="contact-card">
         <h3 style="color:#fff;">Quick Project Inquiry</h3>
-        <form action="mailto:kevinschneider13@mac.com" method="post" enctype="text/plain">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-grid">
-            <input type="text" name="name" placeholder="Your name" />
+            <input type="text" name="name" placeholder="Your name" required />
             <input type="text" name="company" placeholder="Company name" />
-            <input type="email" name="email" placeholder="Email address" />
+            <input type="email" name="email" placeholder="Email address" required />
             <input type="text" name="phone" placeholder="Phone number" />
-            <textarea class="full" name="details" placeholder="Project location, estimated number of poles, timeline, and anything else helpful"></textarea>
+            <input type="text" name="location" placeholder="Project location" class="full" />
+            <textarea class="full" name="details" placeholder="Estimated number of poles, timeline, scope, and anything else helpful" required></textarea>
+            <input type="hidden" name="_subject" value="New website inquiry - Granite State Precision Pole Inspection" />
+            <input type="hidden" name="_next" value="thank-you.html" />
           </div>
           <div class="btn-row" style="margin-top:18px;">
             <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Send Inquiry</button>
           </div>
-          <div class="form-note">This button opens your email app with the project details. A dedicated web form can be added later.</div>
+          <div class="form-note">Replace <strong>YOUR_FORM_ID</strong> with your Formspree form ID and this will send inquiries directly from your website.</div>
         </form>
       </div>
     </div>
@@ -530,5 +533,6 @@
   <footer>
     <div class="container">© Granite State Precision Pole Inspection, LLC · Professional wooden utility pole inspection services nationwide</div>
   </footer>
+  
 </body>
 </html>
