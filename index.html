@@ -4,343 +4,679 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Granite State Precision Pole Inspection, LLC</title>
-  <meta name="description" content="Granite State Precision Pole Inspection, LLC provides professional wooden utility pole inspections, precision density testing, visual inspections, safety marker installation, and nationwide service." />
-  <meta name="keywords" content="utility pole inspection, wooden utility pole inspection, pole inspection services, wood pole density testing, nationwide pole inspections, utility infrastructure inspections" />
+  <meta
+    name="description"
+    content="Granite State Precision Pole Inspection, LLC provides professional wooden utility pole inspections, precision density testing, visual inspections, safety marker installation, and nationwide service."
+  />
+  <meta
+    name="keywords"
+    content="utility pole inspection, wooden utility pole inspection, pole inspection services, wood pole density testing, nationwide pole inspections, utility infrastructure inspections"
+  />
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
+    :root {
+      --orange: #f97316;
+      --orange-dark: #c2410c;
+      --orange-light: #ffedd5;
+      --charcoal: #111827;
+      --charcoal-2: #1f2937;
+      --slate: #475569;
+      --silver: #d1d5db;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #1f2937;
-      background: #ffffff;
+      color: var(--charcoal-2);
+      background: var(--white);
       line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; border-radius: 20px; }
-    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      border-radius: 20px;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-      background: rgba(17,24,39,0.85);
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
+
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 24px;
       padding: 16px 0;
-      color: #fff;
-      gap: 20px;
+      color: var(--white);
     }
+
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--orange), #fb923c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-title {
+      font-size: 17px;
       font-weight: 800;
       letter-spacing: 0.02em;
-      font-size: 18px;
+      line-height: 1.2;
     }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      align-items: center;
       font-size: 14px;
       color: #e5e7eb;
     }
-    .nav-links a:hover { color: #fff; }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
     .nav-cta {
-      background: #f97316;
-      color: #fff;
+      background: var(--orange);
+      color: var(--white);
       padding: 10px 16px;
       border-radius: 12px;
       font-weight: 700;
     }
+
     .hero {
       position: relative;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      color: #fff;
+      overflow: hidden;
+      color: var(--white);
       background:
-        linear-gradient(rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.68)),
-        url('https://images.unsplash.com/photo-1581091870622-3a1a1a9b0c8b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.62)),
+        url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
     }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      right: -120px;
+      width: 360px;
+      height: 360px;
+      background: rgba(249, 115, 22, 0.18);
+      border-radius: 50%;
+      filter: blur(20px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 280px;
+      height: 280px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      filter: blur(18px);
+    }
+
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
       align-items: center;
-      width: 100%;
-      padding: 80px 0;
+      padding: 88px 0 78px;
     }
-    .hero-content { max-width: 760px; }
+
     .eyebrow {
       display: inline-block;
       padding: 10px 16px;
+      border-radius: 999px;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 18px;
     }
+
     h1 {
-      font-size: 58px;
-      line-height: 1.04;
-      margin: 0 0 20px;
-    }
-    h2 {
-      font-size: 38px;
-      line-height: 1.12;
       margin: 0 0 18px;
-      color: #111827;
+      font-size: 60px;
+      line-height: 1.02;
+      letter-spacing: -0.03em;
     }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 38px;
+      line-height: 1.1;
+      color: var(--charcoal);
+    }
+
     h3 {
-      font-size: 22px;
       margin: 0 0 10px;
-      color: #111827;
+      font-size: 22px;
+      color: var(--charcoal);
     }
+
     .hero p {
-      font-size: 19px;
       margin: 0 0 14px;
-      color: #e5e7eb;
+      font-size: 19px;
+      color: #f1f5f9;
+      max-width: 720px;
     }
+
     .btn-row {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       margin-top: 28px;
     }
+
     .btn {
       display: inline-block;
       padding: 14px 22px;
       border-radius: 12px;
-      font-weight: 700;
+      font-weight: 800;
+      transition: transform 0.15s ease;
     }
-    .btn-primary { background: #f97316; color: #fff; }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(249, 115, 22, 0.28);
+    }
+
     .btn-secondary {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: var(--white);
     }
+
     .hero-panel {
       background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.16);
       border-radius: 24px;
-      padding: 26px;
+      padding: 22px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     }
-    .hero-panel h3 { color: #fff; }
-    .hero-panel ul {
+
+    .hero-panel h3 {
+      color: var(--white);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .hero-panel p {
+      font-size: 15px;
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+
+    .hero-list {
       list-style: none;
       padding: 0;
       margin: 18px 0 0;
     }
-    .hero-panel li {
-      margin-bottom: 12px;
-      padding-left: 24px;
+
+    .hero-list li {
       position: relative;
-      color: #f3f4f6;
+      padding-left: 24px;
+      margin-bottom: 12px;
+      color: #f8fafc;
       font-size: 15px;
     }
-    .hero-panel li::before {
-      content: '•';
+
+    .hero-list li::before {
+      content: "•";
       position: absolute;
       left: 0;
-      top: 0;
-      color: #fb923c;
-      font-size: 22px;
+      top: -1px;
+      color: #fdba74;
+      font-size: 24px;
       line-height: 1;
     }
+
+    .mini-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .mini-gallery img {
+      height: 145px;
+      width: 100%;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(15,23,42,0.18);
+    }
+
     .stats {
-      background: #f8fafc;
+      background: var(--light);
       border-top: 1px solid #e5e7eb;
       border-bottom: 1px solid #e5e7eb;
     }
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       padding: 28px 0;
     }
+
     .stat-card {
-      background: #fff;
+      background: var(--white);
       border: 1px solid #e5e7eb;
       border-radius: 18px;
-      padding: 22px;
+      padding: 24px 20px;
       text-align: center;
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
     }
+
     .stat-number {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
-      color: #f97316;
+      color: var(--orange);
       margin-bottom: 6px;
     }
-    .section { padding: 86px 0; }
-    .section-light { background: #f8fafc; }
+
+    .section {
+      padding: 86px 0;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .section-header p {
+      color: var(--slate);
+      margin: 0;
+      font-size: 18px;
+    }
+
     .two-col {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.02fr 0.98fr;
       gap: 42px;
       align-items: center;
     }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       margin-top: 34px;
     }
+
     .card {
-      background: #fff;
+      background: var(--white);
       border: 1px solid #e5e7eb;
-      border-radius: 22px;
+      border-radius: var(--radius);
       padding: 24px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      box-shadow: var(--shadow);
     }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--orange-light);
+      color: var(--orange-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
     .image-grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
     }
-    .why-us {
-      background: #111827;
-      color: #fff;
+
+    .image-grid-2 img,
+    .about-image,
+    .why-image {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
     }
-    .why-us h2, .why-us h3 { color: #fff; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 42px;
-      align-items: center;
+
+    .quote-box {
+      border: 1px solid #fed7aa;
+      background: #fff7ed;
+      border-radius: 22px;
+      padding: 22px;
+      margin-top: 24px;
     }
-    .why-list {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
+
+    .quote-box strong {
+      color: var(--orange-dark);
     }
-    .why-list li {
-      margin-bottom: 14px;
-      padding-left: 28px;
-      position: relative;
-      color: #e5e7eb;
-    }
-    .why-list li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: #f97316;
-      font-weight: 700;
-    }
+
     .process-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
       margin-top: 34px;
     }
+
     .process-step {
+      background: var(--white);
       border: 1px solid #e5e7eb;
       border-radius: 22px;
       padding: 24px;
-      background: #fff;
+      box-shadow: var(--shadow);
     }
+
     .step-num {
       width: 42px;
       height: 42px;
+      border-radius: 999px;
+      background: var(--orange-light);
+      color: var(--orange);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      background: #fff7ed;
-      color: #f97316;
       font-weight: 800;
       margin-bottom: 14px;
     }
-    .quote-box {
-      border: 1px solid #fed7aa;
-      background: #fff7ed;
+
+    .why-us {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: var(--white);
+    }
+
+    .why-us h2,
+    .why-us h3 {
+      color: var(--white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .why-copy p {
+      color: #e5e7eb;
+    }
+
+    .why-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+    }
+
+    .why-list li {
+      margin-bottom: 14px;
+      padding-left: 28px;
+      position: relative;
+      color: #e5e7eb;
+    }
+
+    .why-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #fb923c;
+      font-weight: 800;
+    }
+
+    .owners-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .owner-card {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
       border-radius: 22px;
       padding: 24px;
-      margin-top: 24px;
+      box-shadow: var(--shadow);
     }
-    .quote-box strong { color: #9a3412; }
+
+    .owner-card p {
+      margin: 0;
+      color: var(--slate);
+    }
+
+    .owner-name {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .owner-role {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--orange-dark);
+      background: var(--orange-light);
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
     .contact {
-      background: linear-gradient(135deg, #f97316, #fb923c);
-      color: #fff;
+      background: linear-gradient(135deg, var(--orange), #fb923c);
+      color: var(--white);
     }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 34px;
       align-items: start;
     }
+
     .contact-card {
       background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.24);
       border-radius: 22px;
       padding: 28px;
       backdrop-filter: blur(4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
-    .contact-card p, .contact p { color: #fff; }
+
+    .contact-card h3 {
+      color: var(--white);
+    }
+
+    .contact-card p,
+    .contact p {
+      color: var(--white);
+    }
+
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
-    .form-grid .full { grid-column: 1 / -1; }
-    input, textarea {
+
+    .form-grid .full {
+      grid-column: 1 / -1;
+    }
+
+    input,
+    textarea {
       width: 100%;
       padding: 14px 15px;
-      border-radius: 12px;
       border: none;
       outline: none;
+      border-radius: 12px;
       font: inherit;
-      color: #111827;
+      color: var(--charcoal);
     }
-    textarea { min-height: 130px; resize: vertical; }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
     .form-note {
       font-size: 13px;
-      color: rgba(255,255,255,0.92);
+      color: rgba(255,255,255,0.94);
       margin-top: 12px;
     }
+
     footer {
       background: #0f172a;
       color: #cbd5e1;
       padding: 24px 0;
       font-size: 14px;
     }
-    p { margin: 0 0 14px; }
+
+    .muted {
+      color: var(--slate);
+    }
 
     @media (max-width: 1080px) {
-      .hero-grid, .stats-grid, .cards, .process-grid, .two-col, .why-grid, .image-grid-2, .contact-grid {
+      h1 { font-size: 48px; }
+      .hero-grid,
+      .stats-grid,
+      .cards,
+      .process-grid,
+      .two-col,
+      .why-grid,
+      .image-grid-2,
+      .owners-grid,
+      .contact-grid {
         grid-template-columns: 1fr 1fr;
       }
-      h1 { font-size: 46px; }
     }
+
     @media (max-width: 760px) {
-      .nav { flex-direction: column; align-items: flex-start; }
-      .nav-links { gap: 12px; }
-      .hero-grid, .stats-grid, .cards, .process-grid, .two-col, .why-grid, .image-grid-2, .contact-grid, .form-grid {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      h1 { font-size: 35px; }
+      h2 { font-size: 30px; }
+
+      .hero-grid,
+      .stats-grid,
+      .cards,
+      .process-grid,
+      .two-col,
+      .why-grid,
+      .image-grid-2,
+      .owners-grid,
+      .contact-grid,
+      .form-grid,
+      .mini-gallery {
         grid-template-columns: 1fr;
       }
-      .form-grid .full { grid-column: auto; }
-      .hero { min-height: auto; }
-      h1 { font-size: 34px; }
-      h2 { font-size: 30px; }
-      .hero-grid { padding: 60px 0; }
+
+      .form-grid .full {
+        grid-column: auto;
+      }
+
+      .hero-grid {
+        padding: 62px 0;
+      }
+
+      .image-grid-2 img,
+      .about-image,
+      .why-image {
+        height: 280px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="topbar">
     <div class="container nav">
-      <div class="brand">Granite State Precision Pole Inspection, LLC</div>
+      <div class="brand">
+        <div class="logo-badge">GS</div>
+        <div class="brand-text">
+          <div class="brand-title">Granite State Precision Pole Inspection, LLC</div>
+          <div class="brand-subtitle">Professional wooden utility pole inspection services nationwide</div>
+        </div>
+      </div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#process">Process</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#owners">Leadership</a>
         <a href="#contact" class="nav-cta">Request a Quote</a>
       </div>
     </div>
@@ -348,24 +684,36 @@
 
   <section class="hero">
     <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="eyebrow">Professional Wooden Utility Pole Inspection Services Nationwide</div>
-        <h1>Precision pole inspection from experienced owner-operators</h1>
-        <p>Granite State Precision Pole Inspection, LLC delivers dependable utility pole inspections with the accuracy, responsiveness, and customer care larger firms often cannot match.</p>
-        <p>We specialize in precision density testing, visual inspections, safety marker installation, and nationwide project support.</p>
+      <div>
+        <div class="eyebrow">Experienced. Accurate. Owner-Led. Nationwide.</div>
+        <h1>Utility pole inspection with more precision, more responsiveness, and more value.</h1>
+        <p>
+          Granite State Precision Pole Inspection, LLC helps utilities, contractors, and infrastructure teams
+          assess wooden pole integrity through precision density testing, visual inspections, and practical field support.
+        </p>
+        <p>
+          We combine experienced owner oversight with dependable communication and a lower-cost structure than many larger firms.
+        </p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="#contact">Request a Quote</a>
-          <a class="btn btn-secondary" href="#services">Explore Services</a>
+          <a href="#contact" class="btn btn-primary">Request a Quote</a>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
         </div>
       </div>
+
       <div class="hero-panel">
-        <h3>Why clients call us</h3>
-        <ul>
-          <li>20,000+ combined inspections between Kevin Schneider and Kevin Keenan</li>
-          <li>Direct communication with owners from first call to field execution</li>
-          <li>High-precision testing plus real-world field judgment</li>
-          <li>Nationwide availability for utilities, contractors, and infrastructure teams</li>
+        <h3>Built to stand out</h3>
+        <p>Clients choose Granite State when they want real field experience without big-firm overhead.</p>
+        <ul class="hero-list">
+          <li>20,000+ combined inspections</li>
+          <li>Direct communication with ownership</li>
+          <li>Precision drill-based density testing</li>
+          <li>Nationwide project support</li>
         </ul>
+
+        <div class="mini-gallery">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Professional team collaboration" />
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Office teamwork and planning" />
+        </div>
       </div>
     </div>
   </section>
@@ -394,40 +742,71 @@
   <section class="section" id="about">
     <div class="container two-col">
       <div>
-        <h2>Built by experienced field professionals</h2>
-        <p>Granite State Precision Pole Inspection, LLC was founded to give clients a more personal, more accountable, and more cost-effective alternative to large inspection firms.</p>
-        <p>Owners Kevin Schneider and Kevin Keenan bring practical field knowledge, consistent execution, and responsive service to every project. When clients hire Granite State, they work directly with experienced decision-makers, not layers of management.</p>
+        <div class="section-header">
+          <h2>Built by experienced field professionals</h2>
+          <p>
+            Granite State Precision Pole Inspection, LLC was created to provide a more personal, more accountable,
+            and more cost-effective alternative to larger inspection providers.
+          </p>
+        </div>
+
+        <p>
+          Our model is simple: experienced leadership, dependable field execution, responsive communication,
+          and practical value for clients who need a trusted inspection partner.
+        </p>
+        <p>
+          Whether you need overflow support, a responsive vendor, or a more cost-effective inspection solution,
+          we’re built to help.
+        </p>
+
         <div class="quote-box">
           <strong>Our promise:</strong>
-          <p style="margin-top:10px; margin-bottom:0;">Professional work. Accurate field execution. Straightforward communication. Better customer care.</p>
+          <p style="margin:10px 0 0;">
+            Professional work. Accurate field execution. Straightforward communication. Better customer care.
+          </p>
         </div>
       </div>
+
       <div>
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Professional team collaborating in office" />
+        <img
+          class="about-image"
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+          alt="Team collaboration and planning"
+        />
       </div>
     </div>
   </section>
 
   <section class="section section-light" id="services">
     <div class="container">
-      <h2>Our Services</h2>
-      <p>Inspection services designed for safety, accuracy, and value.</p>
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Inspection services designed for safety, accuracy, and value.</p>
+      </div>
+
       <div class="cards">
         <div class="card">
+          <div class="card-icon">1</div>
           <h3>Precision Density Testing</h3>
           <p>High-precision drill technology helps measure wood density and assess structural integrity with reliable field data.</p>
         </div>
+
         <div class="card">
+          <div class="card-icon">2</div>
           <h3>Visual Pole Inspections</h3>
-          <p>Identify deterioration, damage, and maintenance issues before they become larger operational problems.</p>
+          <p>Identify deterioration, damage, and maintenance concerns before they become larger operational problems.</p>
         </div>
+
         <div class="card">
+          <div class="card-icon">3</div>
           <h3>Safety Marker Installation</h3>
-          <p>Improve visibility and reduce risk with hazard marker installation and related safety support.</p>
+          <p>Improve visibility and reduce risk with hazard marker installation and related field safety support.</p>
         </div>
+
         <div class="card">
+          <div class="card-icon">4</div>
           <h3>Nationwide Coverage</h3>
-          <p>Available anywhere in the United States for dependable project support and field inspection services.</p>
+          <p>Available anywhere in the United States for dependable project support and responsive field execution.</p>
         </div>
       </div>
     </div>
@@ -435,35 +814,47 @@
 
   <section class="section">
     <div class="container image-grid-2">
-      <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80" alt="Team meeting and collaboration" />
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Office teamwork and planning" />
+      <img
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
+        alt="Business team in office meeting"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+        alt="Professional office collaboration"
+      />
     </div>
   </section>
 
   <section class="section section-light" id="process">
     <div class="container">
-      <h2>How We Work</h2>
-      <p>A simple, responsive process that keeps projects moving.</p>
+      <div class="section-header">
+        <h2>How We Work</h2>
+        <p>A clear, responsive process that keeps projects moving.</p>
+      </div>
+
       <div class="process-grid">
         <div class="process-step">
           <div class="step-num">1</div>
           <h3>Review Scope</h3>
-          <p>We discuss your project, location, timeline, and inspection objectives.</p>
+          <p>We discuss project goals, location, timeline, and the level of inspection support you need.</p>
         </div>
+
         <div class="process-step">
           <div class="step-num">2</div>
           <h3>Plan Field Work</h3>
-          <p>We coordinate logistics, staffing, equipment, and scheduling for efficient execution.</p>
+          <p>We coordinate scheduling, equipment, logistics, and field execution for efficient performance.</p>
         </div>
+
         <div class="process-step">
           <div class="step-num">3</div>
           <h3>Inspect & Document</h3>
-          <p>We perform field inspections with precision testing, visual review, and safety support as needed.</p>
+          <p>We perform inspections using precision testing, visual review, and related safety support as required.</p>
         </div>
+
         <div class="process-step">
           <div class="step-num">4</div>
           <h3>Communicate Results</h3>
-          <p>We keep communication clear so your team gets usable information quickly.</p>
+          <p>We keep communication straightforward so your team gets usable information quickly and clearly.</p>
         </div>
       </div>
     </div>
@@ -471,9 +862,12 @@
 
   <section class="section why-us" id="why-us">
     <div class="container why-grid">
-      <div>
-        <h2>Why Choose Us</h2>
-        <p>We combine field experience, owner involvement, and customer care to deliver dependable inspection work without the overhead of larger firms.</p>
+      <div class="why-copy">
+        <h2>Why Choose Granite State</h2>
+        <p>
+          We combine owner involvement, field experience, and customer care to deliver dependable work
+          without the overhead and delays that often come with larger vendors.
+        </p>
         <ul class="why-list">
           <li>20,000+ combined inspections</li>
           <li>Owner-led service with direct accountability</li>
@@ -482,16 +876,42 @@
           <li>Professional, accurate, and trustworthy execution</li>
         </ul>
       </div>
+
       <div>
-        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80" alt="Office team collaborating on project documents" />
+        <img
+          class="why-image"
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
+          alt="Team reviewing project documents"
+        />
       </div>
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container image-grid-2">
-      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80" alt="Business team in office meeting" />
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Professional office collaboration" />
+  <section class="section" id="owners">
+    <div class="container">
+      <div class="section-header">
+        <h2>Leadership</h2>
+        <p>Experienced leadership with direct owner involvement and practical field credibility.</p>
+      </div>
+
+      <div class="owners-grid">
+        <div class="owner-card">
+          <div class="owner-role">Owner</div>
+          <div class="owner-name">Kevin Schneider</div>
+          <p>
+            Co-owner of Granite State Precision Pole Inspection, LLC, focused on delivering professional,
+            accurate, and responsive inspection support nationwide.
+          </p>
+        </div>
+
+        <div class="owner-card">
+          <div class="owner-role">Silent Partner</div>
+          <div class="owner-name">The Godfather of Poles, Mr. KK</div>
+          <p>
+            Silent partner and strategic presence behind the Granite State brand.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -499,40 +919,56 @@
     <div class="container contact-grid">
       <div>
         <h2 style="color:#fff;">Request a Quote</h2>
-        <p>Tell us about your project scope, location, and timeline. Granite State Precision Pole Inspection is ready to support work anywhere in the United States.</p>
+        <p>
+          Tell us about your project scope, location, and timeline. Granite State Precision Pole Inspection
+          is ready to support work anywhere in the United States.
+        </p>
+
         <div class="contact-card" style="margin-top:22px;">
-          <h3 style="color:#fff;">Contact Information</h3>
-          <p><strong>Owners:</strong> Kevin Schneider &amp; Kevin Keenan</p>
+          <h3>Contact Information</h3>
+          <p><strong>Owner:</strong> Kevin Schneider</p>
+          <p><strong>Silent Partner:</strong> The Godfather of Poles, Mr. KK</p>
           <p><strong>Email:</strong> kevinschneider13@mac.com</p>
           <p><strong>Phone:</strong> 603-512-5560</p>
           <p><strong>Service Area:</strong> Nationwide — all 50 states</p>
         </div>
       </div>
+
       <div class="contact-card">
-        <h3 style="color:#fff;">Quick Project Inquiry</h3>
-        <form action="https://formspree.io/f/mqegokbq" method="POST">
+        <h3>Quick Project Inquiry</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-grid">
             <input type="text" name="name" placeholder="Your name" required />
             <input type="text" name="company" placeholder="Company name" />
             <input type="email" name="email" placeholder="Email address" required />
             <input type="text" name="phone" placeholder="Phone number" />
             <input type="text" name="location" placeholder="Project location" class="full" />
-            <textarea class="full" name="details" placeholder="Estimated number of poles, timeline, scope, and anything else helpful" required></textarea>
+            <textarea
+              class="full"
+              name="details"
+              placeholder="Estimated number of poles, timeline, scope, and anything else helpful"
+              required
+            ></textarea>
             <input type="hidden" name="_subject" value="New website inquiry - Granite State Precision Pole Inspection" />
             <input type="hidden" name="_next" value="thank-you.html" />
           </div>
+
           <div class="btn-row" style="margin-top:18px;">
-            <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">Send Inquiry</button>
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
           </div>
-          <div class="form-note">Replace <strong>YOUR_FORM_ID</strong> with your Formspree form ID and this will send inquiries directly from your website.</div>
+
+          <div class="form-note">
+            Replace <strong>YOUR_FORM_ID</strong> with your real Formspree form ID to activate the form.
+          </div>
         </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">© Granite State Precision Pole Inspection, LLC · Professional wooden utility pole inspection services nationwide</div>
+    <div class="container">
+      © Granite State Precision Pole Inspection, LLC · Professional wooden utility pole inspection services nationwide
+    </div>
   </footer>
-  
 </body>
 </html>
