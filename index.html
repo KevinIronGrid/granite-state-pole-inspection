@@ -1,1086 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Granite State Precision Pole Inspection, LLC</title>
-  <meta
-    name="description"
-    content="Granite State Precision Pole Inspection, LLC provides professional wooden utility pole inspections, precision density testing, visual inspections, safety marker installation, and nationwide service."
-  />
-  <meta
-    name="keywords"
-    content="utility pole inspection, wooden utility pole inspection, pole inspection services, wood pole density testing, nationwide pole inspections, utility infrastructure inspections"
-  />
-  <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --orange: #f97316;
-      --orange-dark: #c2410c;
-      --orange-light: #ffedd5;
-      --charcoal: #111827;
-      --charcoal-2: #1f2937;
-      --slate: #475569;
-      --silver: #d1d5db;
-      --light: #f8fafc;
-      --white: #ffffff;
-      --shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
-      --radius: 22px;
-      --max: 1180px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--charcoal-2);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      border-radius: 20px;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(17, 24, 39, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      padding: 16px 0;
-      color: var(--white);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .logo-mark {
-      width: 64px;
-      height: 64px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #1f2937, #0f172a);
-      position: relative;
-      overflow: hidden;
-      flex: 0 0 auto;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.32);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .logo-mark::before {
-      content: "";
-      position: absolute;
-      bottom: 10px;
-      left: 14px;
-      width: 8px;
-      height: 34px;
-      background: var(--orange);
-      border-radius: 4px;
-      transform: rotate(-12deg);
-      box-shadow: 12px -8px 0 0 rgba(255,255,255,0.86);
-    }
-
-    .logo-mark::after {
-      content: "";
-      position: absolute;
-      bottom: 16px;
-      right: 10px;
-      width: 28px;
-      height: 6px;
-      background: rgba(255,255,255,0.14);
-      border-radius: 999px;
-      transform: rotate(-18deg);
-    }
-
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-title {
-      font-size: 17px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-
-    .brand-subtitle {
-      font-size: 12px;
-      color: #cbd5e1;
-      line-height: 1.2;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 14px;
-      color: #e5e7eb;
-    }
-
-    .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .nav-cta {
-      background: var(--orange);
-      color: var(--white);
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-weight: 700;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      color: var(--white);
-      background:
-        linear-gradient(rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.62)),
-        url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -140px;
-      right: -120px;
-      width: 360px;
-      height: 360px;
-      background: rgba(249, 115, 22, 0.18);
-      border-radius: 50%;
-      filter: blur(20px);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -80px;
-      left: -80px;
-      width: 280px;
-      height: 280px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      filter: blur(18px);
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 34px;
-      align-items: center;
-      padding: 88px 0 78px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: 60px;
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-    }
-
-    h2 {
-      margin: 0 0 16px;
-      font-size: 38px;
-      line-height: 1.1;
-      color: var(--charcoal);
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: var(--charcoal);
-    }
-
-    .hero p {
-      margin: 0 0 14px;
-      font-size: 19px;
-      color: #f1f5f9;
-      max-width: 720px;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 800;
-      transition: transform 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--orange);
-      color: var(--white);
-      box-shadow: 0 12px 24px rgba(249, 115, 22, 0.28);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: var(--white);
-    }
-
-    .hero-panel {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 24px;
-      padding: 22px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-    }
-
-    .hero-panel h3 {
-      color: var(--white);
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .hero-panel p {
-      font-size: 15px;
-      color: #f8fafc;
-      margin-bottom: 10px;
-    }
-
-    .hero-list {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 0;
-    }
-
-    .hero-list li {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 12px;
-      color: #f8fafc;
-      font-size: 15px;
-    }
-
-    .hero-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: -1px;
-      color: #fdba74;
-      font-size: 24px;
-      line-height: 1;
-    }
-
-    .mini-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .mini-gallery img {
-      height: 145px;
-      width: 100%;
-      object-fit: cover;
-      box-shadow: 0 10px 24px rgba(15,23,42,0.18);
-    }
-
-    .stats {
-      background: var(--light);
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      padding: 28px 0;
-    }
-
-    .stat-card {
-      background: var(--white);
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 24px 20px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    }
-
-    .stat-number {
-      font-size: 30px;
-      font-weight: 800;
-      color: var(--orange);
-      margin-bottom: 6px;
-    }
-
-    .section {
-      padding: 86px 0;
-    }
-
-    .section-light {
-      background: var(--light);
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 32px;
-    }
-
-    .section-header p {
-      color: var(--slate);
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 34px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid #e5e7eb;
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--orange-light);
-      color: var(--orange-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-
-    .image-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .image-grid-2 img,
-    .about-image,
-    .why-image {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-    }
-
-    .quote-box {
-      border: 1px solid #fed7aa;
-      background: #fff7ed;
-      border-radius: 22px;
-      padding: 22px;
-      margin-top: 24px;
-    }
-
-    .quote-box strong {
-      color: var(--orange-dark);
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .process-step {
-      background: var(--white);
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .step-num {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background: var(--orange-light);
-      color: var(--orange);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .why-us {
-      background: linear-gradient(135deg, #111827, #1f2937);
-      color: var(--white);
-    }
-
-    .why-us h2,
-    .why-us h3 {
-      color: var(--white);
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .why-copy p {
-      color: #e5e7eb;
-    }
-
-    .why-list {
-      list-style: none;
-      padding: 0;
-      margin: 24px 0 0;
-    }
-
-    .why-list li {
-      margin-bottom: 14px;
-      padding-left: 28px;
-      position: relative;
-      color: #e5e7eb;
-    }
-
-    .why-list li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: #fb923c;
-      font-weight: 800;
-    }
-
-    .owners-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .owner-card {
-      background: var(--white);
-      border: 1px solid #e5e7eb;
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .owner-main {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 22px;
-      align-items: start;
-    }
-
-    .owner-photo {
-      width: 220px;
-      height: 260px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 1px solid #e5e7eb;
-      box-shadow: var(--shadow);
-    }
-
-    .owner-card p {
-      margin: 0;
-      color: var(--slate);
-    }
-
-    .owner-name {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--charcoal);
-      margin-bottom: 8px;
-    }
-
-    .owner-role {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--orange-dark);
-      background: var(--orange-light);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .charity {
-      background: linear-gradient(135deg, #fff7ed, #fffbeb);
-      border-top: 1px solid #fed7aa;
-      border-bottom: 1px solid #fed7aa;
-    }
-
-    .charity-box {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 28px;
-      align-items: center;
-      background: var(--white);
-      border: 1px solid #fed7aa;
-      border-radius: 26px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .charity-badge {
-      display: inline-block;
-      background: #111827;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      margin-bottom: 14px;
-    }
-
-    .charity-amount {
-      font-size: 46px;
-      font-weight: 800;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .contact {
-      background: linear-gradient(135deg, var(--orange), #fb923c);
-      color: var(--white);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .contact-card {
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.24);
-      border-radius: 22px;
-      padding: 28px;
-      backdrop-filter: blur(4px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-    }
-
-    .contact-card h3 {
-      color: var(--white);
-    }
-
-    .contact-card p,
-    .contact p {
-      color: var(--white);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .form-grid .full {
-      grid-column: 1 / -1;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 14px 15px;
-      border: none;
-      outline: none;
-      border-radius: 12px;
-      font: inherit;
-      color: var(--charcoal);
-    }
-
-    textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    button {
-      border: none;
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .form-note {
-      font-size: 13px;
-      color: rgba(255,255,255,0.94);
-      margin-top: 12px;
-    }
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 24px 0;
-      font-size: 14px;
-    }
-
-    @media (max-width: 1080px) {
-      h1 { font-size: 48px; }
-      .hero-grid,
-      .stats-grid,
-      .cards,
-      .process-grid,
-      .two-col,
-      .why-grid,
-      .owners-grid,
-      .charity-box,
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
-
-      h1 { font-size: 35px; }
-      h2 { font-size: 30px; }
-
-      .hero-grid,
-      .stats-grid,
-      .cards,
-      .process-grid,
-      .two-col,
-      .why-grid,
-      .image-grid-2,
-      .owners-grid,
-      .charity-box,
-      .contact-grid,
-      .form-grid,
-      .mini-gallery,
-      .owner-main {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid .full {
-        grid-column: auto;
-      }
-
-      .hero-grid {
-        padding: 62px 0;
-      }
-
-      .image-grid-2 img,
-      .about-image,
-      .why-image {
-        height: 280px;
-      }
-
-      .owner-photo {
-        width: 100%;
-        height: 320px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Granite State Precision Pole Inspection, LLC</title>
+
+<style>
+* { box-sizing: border-box; }
+body { margin:0; font-family: Arial; color:#1f2937; }
+
+:root {
+  --orange:#f97316;
+  --dark:#111827;
+  --light:#f8fafc;
+}
+
+.container { max-width:1100px; margin:auto; padding:20px; }
+
+.topbar {
+  background:var(--dark);
+  color:white;
+  padding:15px;
+}
+
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-weight:bold;
+  font-size:18px;
+}
+
+.hero {
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  color:white;
+  padding:80px 20px;
+}
+
+.hero h1 { font-size:48px; }
+
+.btn {
+  background:var(--orange);
+  color:white;
+  padding:12px 18px;
+  border-radius:8px;
+  display:inline-block;
+  margin-top:15px;
+}
+
+.section { padding:60px 20px; }
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card {
+  border:1px solid #ddd;
+  padding:20px;
+  border-radius:12px;
+  background:white;
+}
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.stat {
+  text-align:center;
+  font-weight:bold;
+}
+
+.owners-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.owner-photo {
+  width:220px;
+  border-radius:12px;
+}
+
+.charity {
+  background:#fff7ed;
+  padding:40px;
+  border-radius:16px;
+}
+
+.contact {
+  background:var(--orange);
+  color:white;
+  padding:40px;
+}
+</style>
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo-mark"></div>
-        <div class="brand-text">
-          <div class="brand-title">Granite State Precision Pole Inspection, LLC</div>
-          <div class="brand-subtitle">Professional wooden utility pole inspection services nationwide</div>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#owners">Leadership</a>
-        <a href="#charity">Giving Back</a>
-        <a href="#contact" class="nav-cta">Request a Quote</a>
-      </div>
+
+<div class="topbar">
+  <div class="container nav">
+    <div class="logo">Granite State Precision Pole Inspection</div>
+    <a href="#contact" style="color:white;">Request Quote</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <h1>Utility Pole Inspection Done Right</h1>
+    <p>Owner-led. Thousands and thousands of poles personally inspected.</p>
+    <a href="#contact" class="btn">Get a Quote</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container stats">
+    <div class="stat">Thousands of Poles</div>
+    <div class="stat">Nationwide</div>
+    <div class="stat">Owner Led</div>
+    <div class="stat">$0.10 Donated Per Pole</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Services</h2>
+    <div class="cards">
+      <div class="card">Precision Density Testing</div>
+      <div class="card">Visual Inspections</div>
+      <div class="card">Safety Markers</div>
+      <div class="card">Nationwide Coverage</div>
     </div>
   </div>
+</section>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Experienced. Accurate. Owner-Led. Nationwide.</div>
-        <h1>Utility pole inspection with more precision, more responsiveness, and more value.</h1>
-        <p>
-          Granite State Precision Pole Inspection, LLC helps utilities, contractors, and infrastructure teams
-          assess wooden pole integrity through precision density testing, visual inspections, and practical field support.
-        </p>
-        <p>
-          Our owners have personally inspected thousands and thousands of poles and bring direct experience,
-          faster communication, and dependable execution to every project.
-        </p>
-        <div class="btn-row">
-          <a href="#contact" class="btn btn-primary">Request a Quote</a>
-          <a href="#services" class="btn btn-secondary">Explore Services</a>
-        </div>
+<section class="section" id="owners">
+  <div class="container">
+    <h2>Leadership</h2>
+
+    <div class="owners-grid">
+
+      <div class="card">
+        <img src="images/kevin-owner.jpg" class="owner-photo">
+        <h3>Kevin Schneider</h3>
+        <p><strong>Owner</strong></p>
+        <p>Thousands and thousands of poles personally inspected with direct, owner-led execution.</p>
       </div>
 
-      <div class="hero-panel">
-        <h3>Why clients call us</h3>
-        <p>Granite State is built for clients who want real field experience without big-firm overhead.</p>
-        <ul class="hero-list">
-          <li>Owners with thousands and thousands of poles personally inspected</li>
-          <li>Direct communication with ownership</li>
-          <li>Precision drill-based density testing</li>
-          <li>Nationwide project support</li>
-        </ul>
-
-        <div class="mini-gallery">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Professional team collaboration" />
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Office teamwork and planning" />
-        </div>
+      <div class="card">
+        <h3>The Godfather of Poles, Mr. KK</h3>
+        <p><strong>Owner</strong></p>
+        <p>Owner and strategic presence behind Granite State.</p>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="stats">
-    <div class="container stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">Thousands</div>
-        <div>of poles personally inspected by ownership</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">50 States</div>
-        <div>Available nationwide</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">Owner-Led</div>
-        <div>Direct communication and accountability</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">$0.10</div>
-        <div>donated per pole drilled to support veterans</div>
-      </div>
-    </div>
-  </section>
+<section class="section">
+  <div class="container charity">
+    <h2>Giving Back</h2>
+    <p><strong>$0.10 per pole drilled</strong> donated to Tunnels to Towers.</p>
+  </div>
+</section>
 
-  <section class="section" id="about">
-    <div class="container two-col">
-      <div>
-        <div class="section-header">
-          <h2>Built by experienced field professionals</h2>
-          <p>
-            Granite State Precision Pole Inspection, LLC was created to provide a more personal, more accountable,
-            and more cost-effective alternative to larger inspection providers.
-          </p>
-        </div>
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
 
-        <p>
-          Our model is simple: experienced leadership, dependable field execution, responsive communication,
-          and practical value for clients who need a trusted inspection partner.
-        </p>
-        <p>
-          Whether you need overflow support, a responsive vendor, or a more cost-effective inspection solution,
-          we’re built to help.
-        </p>
+    <p><strong>Owner:</strong> Kevin Schneider</p>
+    <p><strong>Owner:</strong> The Godfather of Poles, Mr. KK</p>
+    <p>Email: kevinschneider13@mac.com</p>
+    <p>Phone: 603-512-5560</p>
 
-        <div class="quote-box">
-          <strong>Our promise:</strong>
-          <p style="margin:10px 0 0;">
-            Professional work. Accurate field execution. Straightforward communication. Better customer care.
-          </p>
-        </div>
-      </div>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Name" required><br><br>
+      <input type="email" name="email" placeholder="Email" required><br><br>
+      <textarea name="message" placeholder="Project details"></textarea><br><br>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
-      <div>
-        <img
-          class="about-image"
-          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
-          alt="Team collaboration and planning"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-light" id="services">
-    <div class="container">
-      <div class="section-header">
-        <h2>Our Services</h2>
-        <p>Inspection services designed for safety, accuracy, and value.</p>
-      </div>
-
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">1</div>
-          <h3>Precision Density Testing</h3>
-          <p>High-precision drill technology helps measure wood density and assess structural integrity with reliable field data.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">2</div>
-          <h3>Visual Pole Inspections</h3>
-          <p>Identify deterioration, damage, and maintenance concerns before they become larger operational problems.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">3</div>
-          <h3>Safety Marker Installation</h3>
-          <p>Improve visibility and reduce risk with hazard marker installation and related field safety support.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">4</div>
-          <h3>Nationwide Coverage</h3>
-          <p>Available anywhere in the United States for dependable project support and responsive field execution.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container image-grid-2">
-      <img
-        src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
-        alt="Business team in office meeting"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
-        alt="Professional office collaboration"
-      />
-    </div>
-  </section>
-
-  <section class="section section-light" id="process">
-    <div class="container">
-      <div class="section-header">
-        <h2>How We Work</h2>
-        <p>A clear, responsive process that keeps projects moving.</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-num">1</div>
-          <h3>Review Scope</h3>
-          <p>We discuss project goals, location, timeline, and the level of inspection support you need.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="step-num">2</div>
-          <h3>Plan Field Work</h3>
-          <p>We coordinate scheduling, equipment, logistics, and field execution for efficient performance.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="step-num">3</div>
-          <h3>Inspect & Document</h3>
-          <p>We perform inspections using precision testing, visual review, and related safety support as required.</p>
-        </div>
-
-        <div class="process-step">
-          <div class="step-num">4</div>
-          <h3>Communicate Results</h3>
-          <p>We keep communication straightforward so your team gets usable information quickly and clearly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section why-us" id="why-us">
-    <div class="container why-grid">
-      <div class="why-copy">
-        <h2>Why Choose Granite State</h2>
-        <p>
-          We combine owner involvement, field experience, and customer care to deliver dependable work
-          without the overhead and delays that often come with larger vendors.
-        </p>
-        <ul class="why-list">
-          <li>Owners who have personally inspected thousands and thousands of poles</li>
-          <li>Owner-led service with direct accountability</li>
-          <li>Responsive communication and better customer care</li>
-          <li>Competitive pricing compared with larger providers</li>
-          <li>Professional, accurate, and trustworthy execution</li>
-        </ul>
-      </div>
-
-      <div>
-        <img
-          class="why-image"
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80"
-          alt="Team reviewing project documents"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="owners">
-    <div class="container">
-      <div class="section-header">
-        <h2>Leadership</h2>
-        <p>Experienced leadership with direct owner involvement and practical field credibility.</p>
-      </div>
-
-      <div class="owners-grid">
-        <div class="owner-card">
-          <div class="owner-main">
-            <img src="images/kevin-owner.jpg" alt="Kevin Schneider" class="owner-photo" />
-            <div>
-              <div class="owner-role">Owner</div>
-              <div class="owner-name">Kevin Schneider</div>
-              <p>
-                Owner of Granite State Precision Pole Inspection, LLC, focused on delivering professional,
-                accurate, and responsive inspection support nationwide.
-              </p>
-              <p style="margin-top:12px;">
-                Kevin brings real field experience, direct client communication, and an owner-led approach
-                built around accountability and service.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="owner-card">
-          <div class="owner-role">Silent Partner</div>
-          <div class="owner-name">The Godfather of Poles, Mr. KK</div>
-          <p>
-            Silent partner and strategic presence behind the Granite State brand.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section charity" id="charity">
-    <div class="container">
-      <div class="charity-box">
-        <div>
-          <div class="charity-badge">GIVING BACK</div>
-          <div class="charity-amount">$0.10</div>
-          <h2 style="margin-top:0;">Donated for every pole drilled</h2>
-        </div>
-        <div>
-          <p style="font-size:18px; color:#334155;">
-            Granite State Precision Pole Inspection is proud to support veterans by donating
-            <strong>$0.10 for every pole drilled</strong> to <strong>Tunnels to Towers</strong>.
-          </p>
-          <p style="color:#475569;">
-            We believe in doing quality work, serving clients well, and giving back in a meaningful way.
-            This commitment is part of how we want to build our company from day one.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section contact" id="contact">
-    <div class="container contact-grid">
-      <div>
-        <h2 style="color:#fff;">Request a Quote</h2>
-        <p>
-          Tell us about your project scope, location, and timeline. Granite State Precision Pole Inspection
-          is ready to support work anywhere in the United States.
-        </p>
-
-        <div class="contact-card" style="margin-top:22px;">
-          <h3>Contact Information</h3>
-          <p><strong>Owner:</strong> Kevin Schneider</p>
-          <p><strong>Silent Partner:</strong> The Godfather of Poles, Mr. KK</p>
-          <p><strong>Email:</strong> kevinschneider13@mac.com</p>
-          <p><strong>Phone:</strong> 603-512-5560</p>
-          <p><strong>Service Area:</strong> Nationwide — all 50 states</p>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <h3>Quick Project Inquiry</h3>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-grid">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="text" name="company" placeholder="Company name" />
-            <input type="email" name="email" placeholder="Email address" required />
-            <input type="text" name="phone" placeholder="Phone number" />
-            <input type="text" name="location" placeholder="Project location" class="full" />
-            <textarea
-              class="full"
-              name="details"
-              placeholder="Estimated number of poles, timeline, scope, and anything else helpful"
-              required
-            ></textarea>
-            <input type="hidden" name="_subject" value="New website inquiry - Granite State Precision Pole Inspection" />
-            <input type="hidden" name="_next" value="thank-you.html" />
-          </div>
-
-          <div class="btn-row" style="margin-top:18px;">
-            <button type="submit" class="btn btn-primary">Send Inquiry</button>
-          </div>
-
-          <div class="form-note">
-            Replace <strong>YOUR_FORM_ID</strong> with your real Formspree form ID to activate the form.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      © Granite State Precision Pole Inspection, LLC · Professional wooden utility pole inspection services nationwide
-    </div>
-  </footer>
 </body>
 </html>
