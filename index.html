@@ -59,7 +59,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(17, 24, 39, 0.92);
+      background: rgba(17, 24, 39, 0.94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -80,19 +80,41 @@
       min-width: 0;
     }
 
-    .logo-badge {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, var(--orange), #fb923c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 800;
-      font-size: 20px;
-      box-shadow: 0 8px 18px rgba(249, 115, 22, 0.35);
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #1f2937, #0f172a);
+      position: relative;
+      overflow: hidden;
       flex: 0 0 auto;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.32);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo-mark::before {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 14px;
+      width: 8px;
+      height: 34px;
+      background: var(--orange);
+      border-radius: 4px;
+      transform: rotate(-12deg);
+      box-shadow: 12px -8px 0 0 rgba(255,255,255,0.86);
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      bottom: 16px;
+      right: 10px;
+      width: 28px;
+      height: 6px;
+      background: rgba(255,255,255,0.14);
+      border-radius: 999px;
+      transform: rotate(-18deg);
     }
 
     .brand-text {
@@ -489,7 +511,7 @@
 
     .owners-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 24px;
       margin-top: 28px;
     }
@@ -502,13 +524,29 @@
       box-shadow: var(--shadow);
     }
 
+    .owner-main {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .owner-photo {
+      width: 220px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--shadow);
+    }
+
     .owner-card p {
       margin: 0;
       color: var(--slate);
     }
 
     .owner-name {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
       color: var(--charcoal);
       margin-bottom: 8px;
@@ -523,6 +561,44 @@
       padding: 6px 10px;
       border-radius: 999px;
       margin-bottom: 12px;
+    }
+
+    .charity {
+      background: linear-gradient(135deg, #fff7ed, #fffbeb);
+      border-top: 1px solid #fed7aa;
+      border-bottom: 1px solid #fed7aa;
+    }
+
+    .charity-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--white);
+      border: 1px solid #fed7aa;
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .charity-badge {
+      display: inline-block;
+      background: #111827;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      margin-bottom: 14px;
+    }
+
+    .charity-amount {
+      font-size: 46px;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 10px;
     }
 
     .contact {
@@ -600,10 +676,6 @@
       font-size: 14px;
     }
 
-    .muted {
-      color: var(--slate);
-    }
-
     @media (max-width: 1080px) {
       h1 { font-size: 48px; }
       .hero-grid,
@@ -612,8 +684,8 @@
       .process-grid,
       .two-col,
       .why-grid,
-      .image-grid-2,
       .owners-grid,
+      .charity-box,
       .contact-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -640,9 +712,11 @@
       .why-grid,
       .image-grid-2,
       .owners-grid,
+      .charity-box,
       .contact-grid,
       .form-grid,
-      .mini-gallery {
+      .mini-gallery,
+      .owner-main {
         grid-template-columns: 1fr;
       }
 
@@ -659,6 +733,11 @@
       .why-image {
         height: 280px;
       }
+
+      .owner-photo {
+        width: 100%;
+        height: 320px;
+      }
     }
   </style>
 </head>
@@ -666,7 +745,7 @@
   <div class="topbar">
     <div class="container nav">
       <div class="brand">
-        <div class="logo-badge">GS</div>
+        <div class="logo-mark"></div>
         <div class="brand-text">
           <div class="brand-title">Granite State Precision Pole Inspection, LLC</div>
           <div class="brand-subtitle">Professional wooden utility pole inspection services nationwide</div>
@@ -677,6 +756,7 @@
         <a href="#services">Services</a>
         <a href="#process">Process</a>
         <a href="#owners">Leadership</a>
+        <a href="#charity">Giving Back</a>
         <a href="#contact" class="nav-cta">Request a Quote</a>
       </div>
     </div>
@@ -692,7 +772,8 @@
           assess wooden pole integrity through precision density testing, visual inspections, and practical field support.
         </p>
         <p>
-          We combine experienced owner oversight with dependable communication and a lower-cost structure than many larger firms.
+          Our owners have personally inspected thousands and thousands of poles and bring direct experience,
+          faster communication, and dependable execution to every project.
         </p>
         <div class="btn-row">
           <a href="#contact" class="btn btn-primary">Request a Quote</a>
@@ -701,10 +782,10 @@
       </div>
 
       <div class="hero-panel">
-        <h3>Built to stand out</h3>
-        <p>Clients choose Granite State when they want real field experience without big-firm overhead.</p>
+        <h3>Why clients call us</h3>
+        <p>Granite State is built for clients who want real field experience without big-firm overhead.</p>
         <ul class="hero-list">
-          <li>20,000+ combined inspections</li>
+          <li>Owners with thousands and thousands of poles personally inspected</li>
           <li>Direct communication with ownership</li>
           <li>Precision drill-based density testing</li>
           <li>Nationwide project support</li>
@@ -721,8 +802,8 @@
   <section class="stats">
     <div class="container stats-grid">
       <div class="stat-card">
-        <div class="stat-number">20,000+</div>
-        <div>Combined poles inspected</div>
+        <div class="stat-number">Thousands</div>
+        <div>of poles personally inspected by ownership</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">50 States</div>
@@ -733,8 +814,8 @@
         <div>Direct communication and accountability</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">Better Value</div>
-        <div>Competitive pricing with stronger service</div>
+        <div class="stat-number">$0.10</div>
+        <div>donated per pole drilled to support veterans</div>
       </div>
     </div>
   </section>
@@ -869,7 +950,7 @@
           without the overhead and delays that often come with larger vendors.
         </p>
         <ul class="why-list">
-          <li>20,000+ combined inspections</li>
+          <li>Owners who have personally inspected thousands and thousands of poles</li>
           <li>Owner-led service with direct accountability</li>
           <li>Responsive communication and better customer care</li>
           <li>Competitive pricing compared with larger providers</li>
@@ -896,12 +977,21 @@
 
       <div class="owners-grid">
         <div class="owner-card">
-          <div class="owner-role">Owner</div>
-          <div class="owner-name">Kevin Schneider</div>
-          <p>
-            Co-owner of Granite State Precision Pole Inspection, LLC, focused on delivering professional,
-            accurate, and responsive inspection support nationwide.
-          </p>
+          <div class="owner-main">
+            <img src="kevin-owner.jpg" alt="Kevin Schneider" class="owner-photo" />
+            <div>
+              <div class="owner-role">Owner</div>
+              <div class="owner-name">Kevin Schneider</div>
+              <p>
+                Owner of Granite State Precision Pole Inspection, LLC, focused on delivering professional,
+                accurate, and responsive inspection support nationwide.
+              </p>
+              <p style="margin-top:12px;">
+                Kevin brings real field experience, direct client communication, and an owner-led approach
+                built around accountability and service.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="owner-card">
@@ -909,6 +999,28 @@
           <div class="owner-name">The Godfather of Poles, Mr. KK</div>
           <p>
             Silent partner and strategic presence behind the Granite State brand.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section charity" id="charity">
+    <div class="container">
+      <div class="charity-box">
+        <div>
+          <div class="charity-badge">GIVING BACK</div>
+          <div class="charity-amount">$0.10</div>
+          <h2 style="margin-top:0;">Donated for every pole drilled</h2>
+        </div>
+        <div>
+          <p style="font-size:18px; color:#334155;">
+            Granite State Precision Pole Inspection is proud to support veterans by donating
+            <strong>$0.10 for every pole drilled</strong> to <strong>Tunnels to Towers</strong>.
+          </p>
+          <p style="color:#475569;">
+            We believe in doing quality work, serving clients well, and giving back in a meaningful way.
+            This commitment is part of how we want to build our company from day one.
           </p>
         </div>
       </div>
