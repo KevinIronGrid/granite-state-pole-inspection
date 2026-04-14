@@ -132,8 +132,8 @@
       overflow: hidden;
       color: var(--white);
       background:
-        linear-gradient(rgba(17, 24, 39, 0.68), rgba(17, 24, 39, 0.62)),
-        url("https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+        linear-gradient(rgba(17, 24, 39, 0.62), rgba(17, 24, 39, 0.60)),
+        url("https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
     }
 
     .hero::before {
@@ -484,9 +484,10 @@
 
     .owners-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1fr;
       gap: 24px;
       margin-top: 28px;
+      max-width: 900px;
     }
 
     .owner-card {
@@ -602,6 +603,11 @@
     .contact-card p,
     .contact p {
       color: var(--white);
+    }
+
+    .contact-card a {
+      color: var(--white);
+      text-decoration: underline;
     }
 
     .form-grid {
@@ -750,7 +756,7 @@
           assess wooden pole integrity through precision density testing, visual inspections, and practical field support.
         </p>
         <p>
-          Our owners have personally inspected thousands and thousands of poles and bring direct experience,
+          Our owner has personally inspected thousands and thousands of poles and brings direct experience,
           faster communication, and dependable execution to every project.
         </p>
         <div class="btn-row">
@@ -763,7 +769,7 @@
         <h3>Why clients call us</h3>
         <p>Granite State is built for clients who want real field experience without big-firm overhead.</p>
         <ul class="hero-list">
-          <li>Owners with thousands and thousands of poles personally inspected</li>
+          <li>Owner with thousands and thousands of poles personally inspected</li>
           <li>Direct communication with ownership</li>
           <li>Precision drill-based density testing</li>
           <li>Nationwide project support</li>
@@ -928,7 +934,7 @@
           without the overhead and delays that often come with larger vendors.
         </p>
         <ul class="why-list">
-          <li>Owners who have personally inspected thousands and thousands of poles</li>
+          <li>Owner who has personally inspected thousands and thousands of poles</li>
           <li>Owner-led service with direct accountability</li>
           <li>Responsive communication and better customer care</li>
           <li>Competitive pricing compared with larger providers</li>
@@ -971,14 +977,6 @@
             </div>
           </div>
         </div>
-
-        <div class="owner-card">
-          <div class="owner-role">Owner</div>
-          <div class="owner-name">The Godfather of Poles, Mr. KK</div>
-          <p>
-            Owner and strategic presence behind the Granite State brand.
-          </p>
-        </div>
       </div>
     </div>
   </section>
@@ -1017,8 +1015,7 @@
         <div class="contact-card" style="margin-top:22px;">
           <h3>Contact Information</h3>
           <p><strong>Owner:</strong> Kevin Schneider</p>
-          <p><strong>Owner:</strong> The Godfather of Poles, Mr. KK</p>
-          <p><strong>Email:</strong> kevinschneider13@mac.com</p>
+          <p><strong>Email:</strong> <a href="mailto:info@granitestatepole.com">info@granitestatepole.com</a></p>
           <p><strong>Phone:</strong> 603-512-5560</p>
           <p><strong>Service Area:</strong> Nationwide — all 50 states</p>
         </div>
